@@ -6,6 +6,21 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    let menuButtonObject = wx.getMenuButtonBoundingClientRect();
+    wx.getSystemInfo({
+      success: res => {
+        //导航高度
+        let statusBarHeight = res.statusBarHeight,
+        navTop = menuButtonObject.top,
+        navHeight = statusBarHeight + menuButtonObject.height + (menuButtonObject.top - statusBarHeight) * 2;
+        this.globalData.navHeight = navHeight;
+        this.globalData.navTop = navTop;
+        this.globalData.windowHeight = res.windowHeight;
+      },
+      fail(err) {
+        console.log(err + "错误信息");
+      },
+    })
     // 登录
     wx.login({
       success: res => {
@@ -33,6 +48,23 @@ App({
       }
     })
   },
+
+  // editTabbar: function () {
+  //   let tabbar = this.globalData.tabBar;
+  //   let currentPages = getCurrentPages();
+  //   let _this = currentPages[currentPages.length - 1];
+  //   let pagePath = _this.route;
+
+  //   (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+
+  //   for (let i in tabbar.list) {
+  //     tabbar.list[i].selected = false;
+  //     (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+  //   }
+  //   _this.setData({
+  //     tabbar: tabbar
+  //   });
+  // },
   globalData: {
     userInfo: null
   }

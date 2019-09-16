@@ -7,7 +7,10 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    navHeight:0,
+    navTop:0,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +19,12 @@ Page({
     })
   },
   onLoad: function () {
+    console.log("TOP" + app.globalData.navTop);
+    console.log("navHeight" + app.globalData.navHeight);
+    this.setData({
+      navHeight: App.globalData.navHeight,
+      navTop: App.globalData.navTop
+    });
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
