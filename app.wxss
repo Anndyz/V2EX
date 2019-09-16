@@ -3,16 +3,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
   padding: 0;
   box-sizing: border-box;
 }
@@ -38,8 +28,8 @@
 }
 
 .member-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 100rpx;
+  height: 100rpx;
   margin-right: 20rpx;
   border-radius: 100%;
 }
@@ -56,7 +46,7 @@
 }
 
 .topic-title {
-    height:120rpx;
+    height:100rpx;
     line-height: 1.4;
     box-sizing: border-box;
     padding-top: 5rpx;
@@ -76,13 +66,16 @@
 }
 
 .reply-num {
-    display: inline-block;
+    /* display: inline-block; */
     margin-left: 50rpx;
     padding:10rpx;
     height:22rpx;
     background-color: #ddd;
     border-radius: 5rpx;   
     color:#777; 
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .member-nickname {

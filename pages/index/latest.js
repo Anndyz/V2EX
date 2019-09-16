@@ -20,8 +20,12 @@ Page({
       navHeight: App.globalData.navHeight,
       navTop: App.globalData.navTop
     });
-    // app.editTabbar();
     this.fetchData();
+  },
+
+  onPullDownRefresh: function () {
+    this.fetchData();
+    console.log('onPullDownRefresh'+"测试下拉刷新")
   },
 
   fetchData:function(){
