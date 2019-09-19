@@ -1,16 +1,16 @@
 // latest.js
 var api = require('../../utils/api.js');
 var mock = require('../../utils/mock.js')
-// const app = getApp()
+//节点数据 以js形式存储
+var all_nodes = require('../../utils/all_nodes.js')
+
 var App = getApp()
 Page({
   data: {
-    title: '最新话题',
-    latest: [],   //保存数组
-    hidden: false, //设置loading
-
+    hidden: true, //设置loading
     navHeight: 0,
     navTop: 0,
+    nodes:[]
   },
   //小程序生命周期加载的函数
   onLoad() {
@@ -33,26 +33,20 @@ Page({
     that.setData({
       hidden: false
     })
-    //获取latest数据
-    api.get({
-      'url': mock.NODE_INFO,
-      'data': {
-        p: 1
-      },
-      success: res => {
-        console.log("NODE_INFO" + res);
-        that.setData({
-          latest: res
-        })
-        setTimeout(function () {
-          that.setData({
-            hidden: true
-          })
-        }, 300)
-      }
-    })
+  //设置nodes数据
+    that.setNodes()
+    console.log("Type" + JSON.stringify(that.data.nodes));
   },
 
-
-
+  setNodes:function(){
+    let that = this
+    this.setData({
+      nodes: all_nodes.default,
+    })
+    setTimeout(function () {
+      that.setData({
+        hidden: true
+        })
+      }, 300)
+  },
 })

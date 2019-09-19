@@ -1,9 +1,8 @@
-/**index.wxss**/
-page{
+/* page{
   position: relative;
 }
 .topic-main{
-  /* background: linear-gradient(180deg,rgba(248,248,255,1) 0%,rgba(255,255,255,0) 100%); */
+
 }
 
 .item-container{
@@ -37,12 +36,7 @@ page{
   padding:2px  4px ; 
   border-radius: 4px;
 }
-/* .img-wrapper{
-  width: 100rpx;
-  height: 100rpx;
-  margin-right: 20rpx;
-  border-radius: 100%;
-} */
+
 .img-content{
   width: 60rpx;
   height: 60rpx;
@@ -52,7 +46,6 @@ page{
 
 .item-reply{
   width: 80%;
-  /* margin-left: 5%; */
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -72,4 +65,42 @@ page{
 
 .fontsize{
   font-size: 14px;
+} */
+
+.nodes-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+.node-title{
+  width: 90%;
+  /* margin-left: 5%; */
+  margin-bottom: 7px;
+}
+
+.title-wrapper{
+  border-left: 3px solid black;
+  padding-left: 5px;
+}
+
+.node-list{
+  width: 90%;
+}
+
+.node-item{
+  display: inline-block;
+  font-size: 14px;
+  padding: 1px 4px;
+  border-radius: 5px;
+  background-color: #eeeeee;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  vertical-align: middle;
+}
+
+.font16{
+  font-size: 16px;
 }
