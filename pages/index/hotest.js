@@ -5,7 +5,7 @@ var mock = require('../../utils/mock.js')
 var App = getApp()
 Page({
   data: {
-    title: '最新话题',
+    title: '最热话题',
     latest: [],   //保存数组
     hidden: false, //设置loading
 
@@ -23,9 +23,17 @@ Page({
     this.fetchData();
   },
 
-  onPullDownRefresh: function () {
+  // onPullDownRefresh: function () {
+  //   this.fetchData();
+  //   console.log('onPullDownRefresh' + "测试下拉刷新")
+  // },
+
+  onShow: function () {
+    this.setData({
+      latest: [],   //保存数组
+      hidden: false, //设置loading
+    })
     this.fetchData();
-    console.log('onPullDownRefresh' + "测试下拉刷新")
   },
 
   fetchData: function () {

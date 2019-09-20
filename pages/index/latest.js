@@ -23,10 +23,18 @@ Page({
     this.fetchData();
   },
 
-  onPullDownRefresh: function () {
-    this.fetchData();
-    console.log('onPullDownRefresh'+"测试下拉刷新")
+  onShow:function(){
+    this.setData({
+      latest: [],   //保存数组
+      hidden: false, //设置loading
+    })
+    this.fetchData()
   },
+
+  // onPullDownRefresh: function () {
+  //   this.fetchData();
+  //   console.log('onPullDownRefresh'+"测试下拉刷新")
+  // },
 
   fetchData:function(){
     var that = this;

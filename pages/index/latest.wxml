@@ -1,6 +1,7 @@
 <!--latest.wxml-->
 <view class="container">
-<navbar page-name="V2EX"></navbar>
+<navbar wx:if="{{title}}" page-name="{{title}}"></navbar>
+<navbar wx:else page-name="最新话题"></navbar>
   <view class="topic-main" style="margin-top:{{navHeight}}px;">
       <block  wx:for="{{latest}}">
         <view class="item-container"  index="{{index}}" id="{{item.id}}">

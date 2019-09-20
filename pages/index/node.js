@@ -7,7 +7,7 @@ var all_nodes = require('../../utils/all_nodes.js')
 var App = getApp()
 Page({
   data: {
-    hidden: true, //设置loading
+    hidden: false, //设置loading
     navHeight: 0,
     navTop: 0,
     nodes:[]
@@ -20,12 +20,16 @@ Page({
       navHeight: App.globalData.navHeight,
       navTop: App.globalData.navTop
     });
-    this.fetchData();
+    setTimeout(function () {
+      this.fetchData();
+      },1000);
   },
-
-  onPullDownRefresh: function () {
+  onShow: function () {
+    this.setData({
+      hidden: false,
+      nodes: [],
+    })
     this.fetchData();
-    console.log('onPullDownRefresh' + "测试下拉刷新")
   },
 
   fetchData: function () {
@@ -40,13 +44,11 @@ Page({
 
   setNodes:function(){
     let that = this
-    this.setData({
-      nodes: all_nodes.default,
-    })
     setTimeout(function () {
       that.setData({
-        hidden: true
+        hidden: true,
+        nodes: all_nodes.default,
         })
-      }, 300)
+      }, 1000)
   },
 })
