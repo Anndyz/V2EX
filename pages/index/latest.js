@@ -23,13 +23,27 @@ Page({
     this.fetchData();
   },
 
-  onShow:function(){
-    this.setData({
-      latest: [],   //保存数组
-      hidden: false, //设置loading
+  /**
+   * 根据id
+   * 跳转到帖子详情
+   */
+  toDetail:function(e){
+    let id = e.currentTarget.id;
+    if(id==0||id==undefined)
+      return
+    wx.navigateTo({
+      url: './detail?id='+id,
     })
-    this.fetchData()
+    console.log(id)
   },
+
+  // onShow:function(){
+  //   this.setData({
+  //     latest: [],   //保存数组
+  //     hidden: false, //设置loading
+  //   })
+  //   this.fetchData()
+  // },
 
   // onPullDownRefresh: function () {
   //   this.fetchData();

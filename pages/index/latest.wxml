@@ -4,7 +4,7 @@
 <navbar wx:else page-name="最新话题"></navbar>
   <view class="topic-main" style="margin-top:{{navHeight}}px;">
       <block  wx:for="{{latest}}">
-        <view class="item-container"  index="{{index}}" id="{{item.id}}">
+        <view class="item-container"  index="{{index}}" id="{{item.id}}" bindtap="toDetail">
             <view class="item-wrapper">
                   <view class="item-left">
                       <view class="img-wrapper">
