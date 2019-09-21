@@ -25,13 +25,29 @@ Page({
     
     this.fetchData(id);
   },
-  
+
   fetchData: function (id) {
     var that = this;
     that.setData({
       hidden: false
     })
-    //获取latest数据
+    //获取主题信息
+    api.get({
+      'url': mock.GET_TOPICS,
+      'data': {
+        id: id
+      },
+      success: res => {
+        console.log("测试测试" + res);
+        setTimeout(function () {
+          that.setData({
+            hidden: true
+          })
+        }, 300)
+      }
+    })
+
+    //获取回复数据
     api.get({
       'url': mock.GET_REPLIES,
       'data': {
