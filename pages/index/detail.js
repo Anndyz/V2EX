@@ -11,7 +11,10 @@ Page({
 
     navHeight: 0,
     navTop: 0,
-    id:0
+    id:0,
+
+    topic_info:[],
+    replies:[],
   },
   //小程序生命周期加载的函数
   onLoad(options) {
@@ -38,10 +41,10 @@ Page({
         id: id
       },
       success: res => {
-        console.log("测试测试" + res);
         setTimeout(function () {
           that.setData({
-            hidden: true
+            hidden: true,
+            topic_info:res
           })
         }, 300)
       }
@@ -60,6 +63,7 @@ Page({
         })
         setTimeout(function () {
           that.setData({
+            replies:res,
             hidden: true
           })
         }, 300)

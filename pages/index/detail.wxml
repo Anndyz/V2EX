@@ -3,7 +3,7 @@
   <navbar wx:if="{{title}}" page-name="{{title}}"></navbar>
   <navbar wx:else page-name="最新话题"></navbar>
   <view class="detail-container" style="margin-top:{{navHeight}}px;">
-      <view class="detail-info">
+      <view class="detail-info" wx:if="{{topic_info}}">
         <view class="detail-title">
           <view class="detail-left">
             <view class="img-wrapper">
