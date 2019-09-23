@@ -36,6 +36,9 @@ Page({
     this.fetchData();
   },
 
+  /**
+   * 获取数据
+   */
   fetchData: function () {
     var that = this;
     that.setData({
@@ -61,6 +64,18 @@ Page({
     })
   },
 
-
+  /**
+   * 根据id
+   * 跳转到帖子详情
+   */
+  toDetail:function(e){
+    let id = e.currentTarget.id;
+    if(id==0||id==undefined)
+      return
+    wx.navigateTo({
+      url: './detail?id='+id,
+    })
+    console.log(id)
+  },
 
 })

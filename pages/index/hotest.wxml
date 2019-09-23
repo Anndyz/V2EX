@@ -4,7 +4,7 @@
 <navbar wx:else page-name="最热话题"></navbar>
   <view class="topic-main" style="margin-top:{{navHeight}}px;">
       <block  wx:for="{{latest}}">
-        <view class="item-container"  index="{{index}}" id="{{item.id}}">
+        <view class="item-container"  index="{{index}}" id="{{item.id}}" bindtap="toDetail">
             <view class="item-wrapper">
                   <view class="item-left">
                       <view class="img-wrapper">
@@ -13,7 +13,7 @@
                       <view>
                         <view class="fontSize">{{item.member.username}}</view>
                         <view class="comment-container">
-                          <!-- <view class="fontsize">前</view>                           -->
+                          <!-- <view class="fontsize">前</view>-->
                           <view class="fontsize">评论 {{item.replies}}</view>
                         </view>
                     </view>
