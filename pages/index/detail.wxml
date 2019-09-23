@@ -2,26 +2,28 @@
 <view class="container">
   <navbar wx:if="{{title}}" page-name="{{title}}"></navbar>
   <navbar wx:else page-name="最新话题"></navbar>
-  <view class="detail-container">
+  <view class="detail-container" style="margin-top:{{navHeight}}px;">
       <view class="detail-info">
         <view class="detail-title">
-          <view>
-            <view>
-              <image src="images/latest.png"></image>
+          <view class="detail-left">
+            <view class="img-wrapper">
+              <image src="images/latest.png" class="img"></image>
             </view>
-            <view>
+            <view class="info-wrapper">
               <view>lonhongg</view>
-              <view>
+              <view class="info-bottom">
                 <view>1小时前</view>
                 <view>评论16</view>
               </view>
             </view>
           </view>
-          <view>
+          <view class="detail-right">
             <view class="tag">程序员</view>
           </view>
         </view>
-        <view class="detail-text"></view>
+        <view class="detail-text">
+          <text></text>
+        </view>
       </view>
       <view class="detail-reply"></view>
   </view>
