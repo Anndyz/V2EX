@@ -3,7 +3,7 @@
 <navbar wx:if="{{title}}" page-name="{{title}}"></navbar>
 <navbar wx:else page-name="最新话题"></navbar>
   <view class="topic-main" style="margin-top:{{navHeight}}px;">
-      <block  wx:for="{{latest}}">
+      <block  wx:for="{{nodeList}}">
         <view class="item-container"  index="{{index}}" id="{{item.id}}" bindtap="toDetail">
             <view class="item-wrapper">
                   <view class="item-left">
@@ -13,7 +13,7 @@
                       <view>
                         <view class="fontSize">{{item.member.username}}</view>
                         <view class="comment-container">
-                          <!-- <view class="fontsize">前</view>                           -->
+                          <!-- <view class="fontsize">前</view> -->
                           <view class="fontsize">评论 {{item.replies}}</view>
                         </view>
                     </view>

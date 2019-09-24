@@ -6,7 +6,7 @@ let App = getApp()
 Page({
   data: {
     title: '',
-    latest: [],   //保存数组
+    nodeList: [],   //保存数组
     hidden: false, //设置loading
 
     navHeight: 0,
@@ -58,7 +58,7 @@ Page({
       success: res => {
         console.log("测试测试" + res);
         that.setData({
-          latest: res
+          nodeList: res
         })
         setTimeout(function () {
           that.setData({

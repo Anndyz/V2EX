@@ -6,7 +6,7 @@ let App = getApp()
 Page({
   data: {
     title: '最热话题',
-    latest: [],   //保存数组
+    infoList: [],   //保存数组
     hidden: false, //设置loading
 
     navHeight: 0,
@@ -30,7 +30,7 @@ Page({
 
   onShow: function () {
     this.setData({
-      latest: [],   //保存数组
+      infoList: [],   //保存数组
       hidden: false, //设置loading
     })
     this.fetchData();
@@ -44,7 +44,7 @@ Page({
     that.setData({
       hidden: false
     })
-    //获取latest数据
+    //获取infoList数据
     api.get({
       'url': mock.HOT_TOPIC,
       'data': {
@@ -53,7 +53,7 @@ Page({
       success: res => {
         console.log("测试测试HOT_TOPIC" + res);
         that.setData({
-          latest: res
+          infoList: res
         })
         setTimeout(function () {
           that.setData({
