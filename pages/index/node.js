@@ -1,10 +1,10 @@
 // latest.js
-var api = require('../../utils/api.js');
-var mock = require('../../utils/mock.js')
+let api = require('../../utils/api.js');
+let mock = require('../../utils/mock.js')
 //节点数据 以js形式存储
-var all_nodes = require('../../utils/all_nodes.js')
+let all_nodes = require('../../utils/all_nodes.js')
 
-var App = getApp()
+let App = getApp()
 Page({
   data: {
     hidden: false, //设置loading
@@ -14,15 +14,11 @@ Page({
   },
   //小程序生命周期加载的函数
   onLoad() {
-    console.log("TOP" + App.globalData.navTop);
-    console.log("navHeight" + App.globalData.navHeight);
     this.setData({
       navHeight: App.globalData.navHeight,
       navTop: App.globalData.navTop
     });
-    setTimeout(function () {
-      this.fetchData();
-      },1000);
+    this.fetchData()
   },
   onShow: function () {
     this.setData({
@@ -33,7 +29,7 @@ Page({
   },
 
   fetchData: function () {
-    var that = this;
+    let that = this;
     that.setData({
       hidden: false
     })
@@ -50,5 +46,19 @@ Page({
         nodes: all_nodes.default,
         })
       }, 1000)
+  },
+
+  /**
+   * 点击跳转到节点页面
+   */
+  toDetail:function(e){
+    console.log(JSON.stringify(e.currentTarget.dataset.tag))
+    let id =  e.currentTarget.id;
+    let tag =  e.currentTarget.dataset.tag;
+    if(id==null||id==undefined)
+      return
+    wx.navigateTo({
+      url: './nodeDetail?id='+id+'&tag='+tag,
+    })
   },
 })

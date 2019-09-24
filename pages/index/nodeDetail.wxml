@@ -1,0 +1,33 @@
+<!--latest.wxml-->
+<view class="container">
+<navbar wx:if="{{title}}" page-name="{{title}}"></navbar>
+<navbar wx:else page-name="最新话题"></navbar>
+  <view class="topic-main" style="margin-top:{{navHeight}}px;">
+      <block  wx:for="{{latest}}">
+        <view class="item-container"  index="{{index}}" id="{{item.id}}" bindtap="toDetail">
+            <view class="item-wrapper">
+                  <view class="item-left">
+                      <view class="img-wrapper">
+                        <image class="img-content" src="{{item.member.avatar_normal}}" background-size="cover"></image>
+                      </view>
+                      <view>
+                        <view class="fontSize">{{item.member.username}}</view>
+                        <view class="comment-container">
+                          <!-- <view class="fontsize">前</view>                           -->
+                          <view class="fontsize">评论 {{item.replies}}</view>
+                        </view>
+                    </view>
+                  </view>
+                  <view class="node-item">{{item.node.title}}</view>
+            </view>
+            <view class="title-wrapper">
+                <view class="item-reply">{{item.title}}</view>
+            </view>
+        </view>
+      </block>
+  </view>
+
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>

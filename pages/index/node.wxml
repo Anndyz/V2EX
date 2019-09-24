@@ -8,7 +8,7 @@
                  <view class="title-wrapper">{{item.title}}</view>
               </view>
               <view class="node-list">
-                <view class="node-item" wx:for="{{item.nodes}}"  wx:for-item="node">{{node.full_name}}</view>    
+                <view class="node-item" wx:for="{{item.nodes}}"  wx:for-item="node" id="{{node.short_name}}" data-tag="{{node.full_name}}" bindtap="toDetail">{{node.full_name}}</view>    
               </view>
           </view>
       </block>

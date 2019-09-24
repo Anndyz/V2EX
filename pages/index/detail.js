@@ -1,8 +1,8 @@
 // latest.js
-var api = require('../../utils/api.js');
-var mock = require('../../utils/mock.js')
+let api = require('../../utils/api.js');
+let mock = require('../../utils/mock.js')
 // const app = getApp()
-var App = getApp()
+let App = getApp()
 Page({
   data: {
     title: '帖子详情',
@@ -31,7 +31,7 @@ Page({
   },
 
   fetchData: function (id) {
-    var that = this;
+    let that = this;
     that.setData({
       hidden: false
     })

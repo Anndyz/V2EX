@@ -5,7 +5,7 @@ let mock = require('../../utils/mock.js')
 let App = getApp()
 Page({
   data: {
-    title: '最新话题',
+    title: '',
     latest: [],   //保存数组
     hidden: false, //设置loading
 
@@ -13,14 +13,20 @@ Page({
     navTop: 0,
   },
   //小程序生命周期加载的函数
-  onLoad(){
-    console.log("TOP" + App.globalData.navTop);
-    console.log("navHeight" + App.globalData.navHeight);
+  onLoad(options){
     this.setData({
       navHeight: App.globalData.navHeight,
       navTop: App.globalData.navTop
     });
-    this.fetchData();
+    let id = (options.id == null) ? 0 : options.id;
+    let tag = (options.tag == null) ? 0 : options.tag;
+    console.log("tag"+JSON.stringify(tag))
+    this.setData({
+      title:tag
+    })
+    if(id==0||id==undefined)
+      return
+    this.fetchData(id);
   },
 
   /**
@@ -37,21 +43,17 @@ Page({
     console.log(id)
   },
 
-  // onPullDownRefresh: function () {
-  //   this.fetchData();
-  //   console.log('onPullDownRefresh'+"测试下拉刷新")
-  // },
 
-  fetchData:function(){
+  fetchData:function(shortname){
     let that = this;
     that.setData({
       hidden: false
     })
   //获取latest数据
     api.get({
-      'url': mock.LATEST_TOPIC,
+      'url': mock.HOT_TOPIC,
       'data': {
-        p: 1
+        node_id: shortname
       },
       success: res => {
         console.log("测试测试" + res);
@@ -66,5 +68,7 @@ Page({
       } 
     })
   },
+  
+  
 
 })

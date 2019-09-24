@@ -1,7 +1,7 @@
 'use strict';
 
-var app = getApp();
-var host = "https://www.v2ex.com/api/";
+let app = getApp();
+let host = "https://www.v2ex.com/api/";
 module.exports = {
   HOST: host,
   API_ROOT: host,
@@ -15,8 +15,8 @@ module.exports = {
   },
 
   request(options) {
-    var apiRoot = this.API_ROOT;
-    var token = '';
+    let apiRoot = this.API_ROOT;
+    let token = '';
     try {
 
       token = wx.getStorageSync('token')
@@ -24,7 +24,7 @@ module.exports = {
       // Do something when catch error
     }
 
-    // var requireLogin = true;
+    // let requireLogin = true;
 
     // if (typeof options.login == 'undefined' || options.login == true) {
     //   requireLogin = true;
@@ -44,7 +44,7 @@ module.exports = {
         'XX-Api-Version': this.API_VERSION
       },
       success: res => {
-        var data = res.data;
+        let data = res.data;
         console.log("request resp ", res)
         options.success(data); 
       },
