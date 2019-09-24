@@ -31,11 +31,11 @@ Page({
       nodeList: [],   //保存数组
       hidden: false, //设置loading
     })
-    this.fetchData();
+    this.fetchData(id);
   },
 
 
-  fetchData:function(){
+  fetchData:function(id){
     let that = this;
     that.setData({
       hidden: false

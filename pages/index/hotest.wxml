@@ -8,7 +8,7 @@
             <view class="item-wrapper">
                   <view class="item-left">
                       <view class="img-wrapper">
-                        <image class="img-content" data-tag="{{item.member.username}}" src="{{item.member.avatar_normal}}" background-size="cover" catchtap="toMember"></image>
+                        <image class="img-content" data-tag="{{item.member.username}}" src="{{item.member.avatar_normal}}" background-size="cover"></image>
                       </view>
                       <view>
                         <view class="fontSize">{{item.member.username}}</view>
