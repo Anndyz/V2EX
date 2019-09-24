@@ -13,7 +13,7 @@
                 <view class="info-wrapper">
                   <view>{{topic_info.member.username}}</view>
                   <view class="info-bottom">
-                    <view>1小时前</view>
+                    <!-- <view>1小时前</view> -->
                     <view>评论{{topic_info.replies}}</view>
                   </view>
                 </view>
