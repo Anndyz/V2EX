@@ -22,15 +22,31 @@
                 <view class="tag">{{topic_info.node.title}}</view>
               </view>
             </view>
-            
-          <text style="font-weight: 500;">{{topic_info.title}}</text>
-         
+            <view class="detail-text fontweight">
+              {{topic_info.title}}
+            </view>     
         </view>
-        
-        <text>{{topic_info.content}}</text>
-       
+        <view  class="detail-text fontweight"> 
+          <text>{{topic_info.content}}</text>
+        </view> 
       </view>
-      <view class="detail-reply"></view>
+      <view class="detail-reply">
+        <view class="detail-wrapper" wx:if="replies" wx:for="{{replies}}">
+            <view class="left-wrapper">
+              <image src="{{item.member.avatar_normal}}" class="reply-img" mode="widthFix"></image>
+            </view>
+            <view class="reply-item">
+              <view class="item-wrapper">
+                <view class="font10 fontweight">{{item.member.username}}</view>
+                <view></view>
+              </view>
+              <view class="item-wrapper">
+                <view class="font14 fontweight">{{item.content}}</view>
+                <view class="font10">{{index+1}}楼</view>
+              </view>
+            </view>
+        </view>
+      </view>
   </view>
   
 

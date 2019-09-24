@@ -15,8 +15,8 @@ page{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  padding: 12px 0px;
+  border-bottom: 1px solid #eee;
 }
 
 .item-wrapper{

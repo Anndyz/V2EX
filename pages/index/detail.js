@@ -27,6 +27,7 @@ Page({
       return
     
     this.fetchData(id);
+    console.log("回复信息"+JSON.stringify(this.data.replies))
   },
 
   fetchData: function (id) {
@@ -35,6 +36,16 @@ Page({
       hidden: false
     })
     //获取主题信息
+    this.fetchArticle(id)
+    //获取回复数据
+    this.fetchReplies(id)
+  },
+
+  /**
+   * 获取帖子信息
+   */
+  fetchArticle:function(id){
+ //获取主题信息
     api.get({
       'url': mock.GET_TOPICS,
       'data': {
@@ -42,31 +53,30 @@ Page({
       },
       success: res => {
         console.log("res"+JSON.stringify(res))
-        that.setData({
+        this.setData({
           hidden: true,
           topic_info:res[0]
         })
       }
     })
+  },
 
-    //获取回复数据
+  /**
+   * 获取回复信息
+   */
+  fetchReplies:function(id){
+ //获取回复数据
     api.get({
       'url': mock.GET_REPLIES,
       'data': {
         topic_id: id
       },
       success: res => {
-        console.log("测试测试" + res);
-        that.setData({
-          latest: res
+        console.log("测试测试" + JSON.stringify(res));
+        this.setData({
+          replies:res
         })
-        setTimeout(function () {
-          that.setData({
-            replies:res.data,
-            hidden: true
-          })
-        }, 300)
       }
     })
-  },
+  }
 })
