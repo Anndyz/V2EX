@@ -19,7 +19,7 @@
                 </view>
               </view>
               <view class="detail-right">
-                <view class="tag">{{topic_info.node.title}}</view>
+                <view class="tag" id="{{topic_info.node.title_alternative}}" data-tag="{{topic_info.node.title}}" bindtap="toNodeDetail">{{topic_info.node.title}}</view>
               </view>
             </view>
             <view class="detail-text fontweight">

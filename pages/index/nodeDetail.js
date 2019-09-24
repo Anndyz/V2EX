@@ -69,6 +69,18 @@ Page({
     })
   },
   
-  
+  /**
+   * 点击跳转到节点页面
+   */
+  toNodeDetail:function(e){
+    console.log(JSON.stringify(e.currentTarget.dataset.tag))
+    let id =  e.currentTarget.id;
+    let tag =  e.currentTarget.dataset.tag;
+    if(id==null||id==undefined)
+      return
+    wx.navigateTo({
+      url: './nodeDetail?id='+id+'&tag='+tag,
+    })
+  },
 
 })

@@ -1,0 +1,9 @@
+<!--latest.wxml-->
+<view class="container">
+<navbar wx:if="{{title}}" page-name="{{title}}"></navbar>
+<navbar wx:else page-name="最新话题"></navbar>
+  
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+</view>

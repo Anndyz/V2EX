@@ -21,16 +21,8 @@ module.exports = {
 
       token = wx.getStorageSync('token')
     } catch (e) {
-      // Do something when catch error
+     
     }
-
-    // let requireLogin = true;
-
-    // if (typeof options.login == 'undefined' || options.login == true) {
-    //   requireLogin = true;
-    // } else {
-    //   requireLogin = false;
-    // }
 
     wx.request({
       url: apiRoot + options.url,

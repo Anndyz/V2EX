@@ -4,7 +4,8 @@
     "pages/index/detail",
     "pages/index/hotest",
     "pages/index/node",
-    "pages/index/nodeDetail"
+    "pages/index/nodeDetail",
+    "pages/index/member"
   ],
   "window": {
     "backgroundTextStyle": "light",

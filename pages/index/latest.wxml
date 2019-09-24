@@ -8,17 +8,17 @@
             <view class="item-wrapper">
                   <view class="item-left">
                       <view class="img-wrapper">
-                        <image class="img-content" src="{{item.member.avatar_normal}}" background-size="cover"></image>
+                        <image id="{{item.member.id}}" data-tag="{{item.member.username}}" class="img-content" src="{{item.member.avatar_normal}}" background-size="cover" catchtap="toMember"></image>
                       </view>
                       <view>
                         <view class="fontSize">{{item.member.username}}</view>
                         <view class="comment-container">
-                          <!-- <view class="fontsize">前</view>                           -->
+                          <!-- <view class="fontsize">前</view>-->
                           <view class="fontsize">评论 {{item.replies}}</view>
                         </view>
                     </view>
                   </view>
-                  <view class="node-item">{{item.node.title}}</view>
+                  <view class="node-item" id="{{item.node.title_alternative}}" data-tag="{{item.node.title}}" bindtap="toNodeDetail">{{item.node.title}}</view>
             </view>
             <view class="title-wrapper">
                 <view class="item-reply">{{item.title}}</view>
