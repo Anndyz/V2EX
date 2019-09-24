@@ -5,25 +5,30 @@
   <view class="detail-container" style="margin-top:{{navHeight}}px;">
       <view class="detail-info" wx:if="{{topic_info}}">
         <view class="detail-title">
-          <view class="detail-left">
-            <view class="img-wrapper">
-              <image src="images/latest.png" class="img"></image>
-            </view>
-            <view class="info-wrapper">
-              <view>lonhongg</view>
-              <view class="info-bottom">
-                <view>1小时前</view>
-                <view>评论16</view>
+            <view class="topic-info">
+              <view class="detail-left">
+                <view class="img-wrapper">
+                  <image src="{{topic_info.member.avatar_normal}}" class="img"></image>
+                </view>
+                <view class="info-wrapper">
+                  <view>{{topic_info.member.username}}</view>
+                  <view class="info-bottom">
+                    <view>1小时前</view>
+                    <view>评论{{topic_info.replies}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="detail-right">
+                <view class="tag">{{topic_info.node.title}}</view>
               </view>
             </view>
-          </view>
-          <view class="detail-right">
-            <view class="tag">程序员</view>
-          </view>
+            
+          <text style="font-weight: 500;">{{topic_info.title}}</text>
+         
         </view>
-        <view class="detail-text">
-          <text></text>
-        </view>
+        
+        <text>{{topic_info.content}}</text>
+       
       </view>
       <view class="detail-reply"></view>
   </view>

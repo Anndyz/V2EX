@@ -41,12 +41,11 @@ Page({
         id: id
       },
       success: res => {
-        setTimeout(function () {
-          that.setData({
-            hidden: true,
-            topic_info:res
-          })
-        }, 300)
+        console.log("res"+JSON.stringify(res))
+        that.setData({
+          hidden: true,
+          topic_info:res[0]
+        })
       }
     })
 
@@ -63,7 +62,7 @@ Page({
         })
         setTimeout(function () {
           that.setData({
-            replies:res,
+            replies:res.data,
             hidden: true
           })
         }, 300)

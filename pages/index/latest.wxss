@@ -1,6 +1,9 @@
 /**index.wxss**/
 page{
   position: relative;
+  width: 100%;
+  height: 100%;
+  background: #F8F8FF;
 }
 .topic-main{
   /* background: linear-gradient(180deg,rgba(248,248,255,1) 0%,rgba(255,255,255,0) 100%); */

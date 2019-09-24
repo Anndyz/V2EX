@@ -47,9 +47,52 @@ App({
         }
       }
     })
+
+    let tabbar = this.globalData.tabBar;
+    let currentPages = getCurrentPages();
+    let _this = currentPages[currentPages.length - 1];
+    let pagePath = _this.route; 
+    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+    for (let i in tabbar.list) {
+      tabbar.list[i].selected = false;
+      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+    }
+    console.log("tabbar"+JSON.stringify(tabbar))
+    _this.setData({
+      tabbar: tabbar
+    });
   },
 
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    systemInfo: null,
+    updateState: 0,
+    updateDeviceId: 0,
+    "tabBar": {
+      "color": "#000",
+      "selectedColor": "#56abe4",
+      "backgroundColor": "#F8F8FF",
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/index/latest",
+          "text": "最新",
+          "iconPath": "images/latest.png",
+          "selectedIconPath": "images/lastest_on.png"
+        },
+        {
+          "pagePath": "pages/index/hotest",
+          "text": "最热",
+          "iconPath": "images/hotest.png",
+          "selectedIconPath": "images/hotest_on.png"
+        },
+        {
+          "pagePath": "pages/index/node",
+          "text": "节点",
+          "iconPath": "images/node.png",
+          "selectedIconPath": "images/node_on.png"
+        }
+      ]
+    },
+  },
 })
