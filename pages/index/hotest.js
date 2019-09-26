@@ -23,10 +23,6 @@ Page({
     this.fetchData();
   },
 
-  // onPullDownRefresh: function () {
-  //   this.fetchData();
-  //   console.log('onPullDownRefresh' + "测试下拉刷新")
-  // },
 
   onShow: function () {
     this.setData({
@@ -93,18 +89,4 @@ Page({
     })
   },
 
-  /**
-   * 去用户个人主页
-   * API 接口数据过少
-   */
-  // toMember:function(e){
-  //   let id =  e.currentTarget.id;
-  //   let username =  e.currentTarget.dataset.tag;
-
-  //   if(id==null||id==undefined)
-  //     return
-  //   wx.navigateTo({
-  //     url: './member?id='+id+'&username='+username,
-  //   })
-  // },
 })
